@@ -1,4 +1,5 @@
 # Gaining access to WPA/WPA2 with short/easy password and inject mining script
+Video of victim side is uploaded
 ## Part 1. Gaining access to WIFI:
 1. Install kali
 2. Buy and hook a NIC (I used alfa awus036neh) that can use monitor mode to VM (assuming your interface name is wlan0)
