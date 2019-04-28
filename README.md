@@ -15,7 +15,7 @@ airodump-ng wlan0
 ```
 airodump-ng --bssid BSSID --channel C --write output wlan0 
 ```
-5. Get the handshake traffic. WPA/WPA2 is more secure than WEP so I need to capture WPA/WPA2 handshake traffic since it contains Message Integrity Code (MIC) sent from client.  To get the handshake traffic, I will use deauthentication attack to kick a current client offline and capture it’s traffic when it reconnects.
+5. Get the handshake traffic. WPA/WPA2 is more secure than WEP so need to capture WPA/WPA2 handshake traffic since it contains Message Integrity Code (MIC) sent from client during handshake. To get the handshake traffic, use deauthentication attack to kick a currently connected client offline and capture it’s traffic when it reconnects.
 ```
 aireplay --deauth 0 -a BSSID -c MAC wlan0
 ```
