@@ -19,8 +19,10 @@ airodump-ng --bssid BSSID --channel C --write output wlan0
 ```
 aireplay --deauth 0 -a BSSID -c MAC wlan0
 ```
-6. Crack the password.
-   Get a wordlist. Two approaches for this part. (Assuming wordlist file is wl.txt)a. Downloaded wordlists from https://github.com/berzerk0/Probable-Wordlists/tree/master/Real-Passwords/WPA-Lengthb. Generated my custom wordlist. Since when I am attacking my own wifi, I have some information about the password pattern and it makes the process easier. In real world this process is done by social engineering.6b. Then compare it with locally generated MIC from password from wordlist to find the correct password. 
+6. Get a wordlist. Two approaches for this part. (Assuming wordlist file is wl.txt)
+   1. Downloaded wordlists from https://github.com/berzerk0/Probable-Wordlists/tree/master/Real-Passwords/WPA-Length 
+   2. Generated my custom wordlist. Since when I am attacking my own wifi, I have some information about the password pattern and it makes the process easier. In real world this process is done by social engineering.
+7. Compare the captured MIC with locally generated MIC from password from wordlist to find the correct password. 
 ```
 aircrack-ng output-01.cap -w wl.txt
 ```
