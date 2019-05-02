@@ -47,7 +47,7 @@ echo $result;
 <a href="https://www.google.com">Continue to Google</a>
 ```
 3.1 Make sure index.php has highest priority in apache2 (over index.html)
-4. Code i used for payload.sh is 
+4. Code i wrote for payload.sh is 
 ```
 #!/bin/bash
 (sudo su;
